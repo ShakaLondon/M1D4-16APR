@@ -170,10 +170,34 @@ console.log(newString);
    Write a function called "onlyLetters" which receives a string as a parameter and returns it removing all the digits.
    Ex.: onlyLetters("I have 4 dogs")  => returns "I have  dogs"
 */
+let inputString5 = 'I am 5 years old';
+
+function onlyLetters(numbersAndLetters){
+  let byeNumber = numbersAndLetters.replace(/\d+/g, '')
+  return byeNumber};
+
+  console.log(onlyLetters(inputString5))
+
+let noNumbers = onlyLetters(inputString5);
+
+console.log(noNumbers)
+
 
 /* Ex.6 
    Write a function called "isThisAnEmail" which receives a string as a parameter and returns true if the string is a valid email address.
 */
+
+let inputString6 = 'sm880@kent.ac.uk';
+
+function isThisEmail(checkEmail){
+  let emailOrNo = checkEmail.includes('@');
+  return emailOrNo};
+
+  console.log(isThisEmail(inputString6))
+
+let emAdd = isThisEmail(inputString6);
+
+console.log('This Is An Email Address:', emAdd)
 
 /* Ex.7
    Write a function called "whatDayIsIt" that should return the current day of the week.
