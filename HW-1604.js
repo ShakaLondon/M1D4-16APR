@@ -203,6 +203,20 @@ console.log('This Is An Email Address:', emAdd)
    Write a function called "whatDayIsIt" that should return the current day of the week.
 */
 
+const today = new Date()
+const day = today.getDay()
+const dayArray = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+
+console.log('Todays Date:', today, 'Day of Week:', day,);
+
+function whatDayIsIt (checkDay){
+  let x = day -1 
+  let tellDay = dayArray[x]
+  return tellDay
+};
+
+console.log('What day is it today?', whatDayIsIt());
+
 /* Ex.8
     Write a function called "rollTheDices" which receives a number as a parameter.
     It should invoke the dice() function defined in Ex1 the specified amount of times,
@@ -212,7 +226,31 @@ console.log('This Is An Email Address:', emAdd)
         sum: 10
         values: [3, 3, 4]
     }
-*/
+*/ 
+
+let counter = 0
+let inputNum = 2
+let outputNum = 0;
+let diceRollArray = []
+
+function rollTheDices (inputNum){
+  while(counter < inputNum){
+    let diceRoll = dice(1,6)
+
+    console.log(diceRoll) 
+
+    diceRollArray.push(diceRoll);
+
+    outputNum = outputNum + diceRoll;
+
+    counter = counter + 1;
+}
+}
+
+let sum8 = rollTheDices(inputNum)
+
+console.log(diceRollArray, 'Total Sum:', outputNum);
+
 
 /* Ex.9
    Write a function called "howManyDays" which receives a date as a parameter and should return the number of days passed since that date.
