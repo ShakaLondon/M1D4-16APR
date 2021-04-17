@@ -256,6 +256,14 @@ console.log(diceRollArray, 'Total Sum:', outputNum);
    Write a function called "howManyDays" which receives a date as a parameter and should return the number of days passed since that date.
 */
 
+let userMonth = 12
+let userDay = 19
+let userYear = 1994
+
+const userDate = Date(userYear, userMonth, userDay)
+
+console.log(userDate)
+
 /* Ex.10
    Write a function called "isTodayMyBirthday" which should return true if today's your birthday, false otherwise.
 */
@@ -444,3 +452,4 @@ const movies = [
       "https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_SX300.jpg",
   },
 ]
+ 
