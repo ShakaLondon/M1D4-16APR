@@ -205,12 +205,12 @@ console.log('This Is An Email Address:', emAdd)
 
 const today = new Date()
 const day = today.getDay()
-const dayArray = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+const dayArray = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
 console.log('Todays Date:', today, 'Day of Week:', day,);
 
 function whatDayIsIt (checkDay){
-  let x = day -1 
+  let x = day
   let tellDay = dayArray[x]
   return tellDay
 };
@@ -256,17 +256,87 @@ console.log(diceRollArray, 'Total Sum:', outputNum);
    Write a function called "howManyDays" which receives a date as a parameter and should return the number of days passed since that date.
 */
 
-let userMonth = 12
-let userDay = 19
-let userYear = 1994
+/*
+let birthDay = new Date (1994, 5, 17)
+const today10 = new Date()
 
-const userDate = Date(userYear, userMonth, userDay)
+console.log('Birthday:', birthDay, "Today's Date:", today10);
 
-console.log(userDate)
+let birthDayArray = [birthDay.getFullYear(), birthDay.getDay(), birthDay.getDate()]
+let today10Array = [today10.getFullYear(), today10.getDay(), today10.getDate()];
+
+console.log(birthDayArray, today10.getDate())
+
+function isTodayMyBirthday (checkYear, checkMonth, checkDate){
+  let checkYearValid = (birthDayArray[0] === today10Array[0])
+  let checkMonthValid = (birthDayArray[1] === today10Array[1])
+  let checkDateValid = (birthDayArray[2] === today10Array[2]);
+
+  console.log(checkYearValid, checkMonthValid, checkDateValid);
+
+  if ((checkYearValid && checkMonthValid && checkDateValid) === true){
+    let itsMyBirthday = true
+    return itsMyBirthday
+  } else {
+    let itsMyBirthday = false 
+    return itsMyBirthday
+  }
+  
+};
+
+let myBirthdayToday = isTodayMyBirthday()
+
+console.log('My birthday is today:', myBirthdayToday);
+*/
+
 
 /* Ex.10
    Write a function called "isTodayMyBirthday" which should return true if today's your birthday, false otherwise.
-*/
+
+let date = a 
+let month = b -1
+let year = c -1;*/
+
+let dayInp = 18
+let monthInp = 4
+let monthInpOut = monthInp -1
+let yearInp = 1994
+const time = [03, 03, 03]
+
+const today10 = new Date()
+let birthDay = new Date((yearInp), (monthInpOut), (dayInp), time[0], time[1], time[2])
+
+
+
+console.log('Birthday:', birthDay, "Today's Date:", today10);
+
+let birthDayArray = [birthDay.getFullYear(), (birthDay.getMonth()+1), birthDay.getDate()]
+let today10Array = [today10.getFullYear(), (today10.getMonth()+1), today10.getDate()];
+
+
+console.log(birthDayArray, today10Array)
+
+function isTodayMyBirthday (checkYear, checkMonth, checkDate){
+ 
+  let checkMonthValid = (birthDayArray[1] === today10Array[1])
+  let checkDateValid = (birthDayArray[2] === today10Array[2]);
+
+  console.log(checkMonthValid, checkDateValid);
+
+  if ((checkMonthValid && checkDateValid) === true){
+    let itsMyBirthday = true
+    return itsMyBirthday
+  } else {
+    let itsMyBirthday = false 
+    return itsMyBirthday
+  }
+  
+};
+
+let myBirthdayToday = isTodayMyBirthday()
+
+console.log('My birthday is today:', myBirthdayToday);
+
 
 // JS Arrays // Objs
 // NOTE: movies array is defined at the end of this file!
