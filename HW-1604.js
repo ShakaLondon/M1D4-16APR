@@ -269,7 +269,7 @@ let pastDay = Date.UTC((yearInp9), (monthInpOut9), (dayInp9), time9[0], time9[1]
 
 const utcDiff = (today9 - pastDay)
 
-console.log('Birthday:', pastDay, "Today's Date:", today9);
+console.log('Birthday UTC:', pastDay, "Today's Date UTC:", today9);
 console.log(utcDiff);
 
 
@@ -344,9 +344,49 @@ console.log('My birthday is today:', myBirthdayToday);
    Write a function called "deleteProp" which receives an object and a string as parameters, and returns the given object after deleting its property named as the given string.
 */
 
+let a = me
+let b = 'name';
+
+
+function deleteProp (objectA, stringB) {
+
+  const doesPropertyExist = objectA.hasOwnProperty(stringB)
+
+    if (doesPropertyExist === true) {
+      delete objectA[stringB] 
+      let newObj = objectA
+      return newObj
+    } else {
+      return 'This property does not exist'
+    }
+}
+
+let outPutObj = deleteProp (a, b)
+
+console.log('New Object', outPutObj)
+
+
 /* Ex.12 
     Write a function called "olderMovie" which finds the oldest movie in the array provided at the end of this file.
 */
+const movie12 = movies;
+let yearArray = [] ;
+
+function olderMovie (movie12) {
+  for(let x=0; x<movie12.length; x++){
+    let yearOut = movie12[x].Year
+    yearArray.push(yearOut)
+    let oldestYear = yearArray.sort()
+
+    return oldestYear[0]
+
+}
+}
+
+let movieYear = olderMovie(movie12)
+
+console.log(movieYear)
+
 
 /* Ex.13
     Write a function called "countMovies" which returns the number of movies contained in the array provided at the end of this file.
