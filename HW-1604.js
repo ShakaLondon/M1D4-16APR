@@ -256,38 +256,37 @@ console.log(diceRollArray, 'Total Sum:', outputNum);
    Write a function called "howManyDays" which receives a date as a parameter and should return the number of days passed since that date.
 */
 
-/*
-let birthDay = new Date (1994, 5, 17)
-const today10 = new Date()
+let dayInp9 = 18
+let monthInp9 = 4
+let yearInp9 = 1994
 
-console.log('Birthday:', birthDay, "Today's Date:", today10);
+const monthInpOut9 = monthInp9 -1
+const time9 = [03, 03, 03]
+const miliConv = 86400000
+const inpDate = new Date((yearInp9), (monthInpOut9), (dayInp9), time9[0], time9[1], time9[2])
+const today9 = Date.now()
+let pastDay = Date.UTC((yearInp9), (monthInpOut9), (dayInp9), time9[0], time9[1], time9[2]);
 
-let birthDayArray = [birthDay.getFullYear(), birthDay.getDay(), birthDay.getDate()]
-let today10Array = [today10.getFullYear(), today10.getDay(), today10.getDate()];
+const utcDiff = (today9 - pastDay)
 
-console.log(birthDayArray, today10.getDate())
+console.log('Birthday:', pastDay, "Today's Date:", today9);
+console.log(utcDiff);
 
-function isTodayMyBirthday (checkYear, checkMonth, checkDate){
-  let checkYearValid = (birthDayArray[0] === today10Array[0])
-  let checkMonthValid = (birthDayArray[1] === today10Array[1])
-  let checkDateValid = (birthDayArray[2] === today10Array[2]);
 
-  console.log(checkYearValid, checkMonthValid, checkDateValid);
-
-  if ((checkYearValid && checkMonthValid && checkDateValid) === true){
-    let itsMyBirthday = true
-    return itsMyBirthday
-  } else {
-    let itsMyBirthday = false 
-    return itsMyBirthday
+function howManyDays (dayGen){
+  if (dayGen >= 0) {
+      let numberOfDays = utcDiff / miliConv
+      return numberOfDays
+    } else {
+      return 0
   }
-  
-};
+}
 
-let myBirthdayToday = isTodayMyBirthday()
+const howManyDaysSince = howManyDays(utcDiff)
+const howManyDaysSinceX = Math.floor(howManyDaysSince)
 
-console.log('My birthday is today:', myBirthdayToday);
-*/
+console.log('It has been', ' ', howManyDaysSinceX, ' ', 'since', inpDate);
+
 
 
 /* Ex.10
@@ -299,7 +298,7 @@ let year = c -1;*/
 
 let dayInp = 18
 let monthInp = 4
-let monthInpOut = monthInp -1
+const monthInpOut = monthInp -1
 let yearInp = 1994
 const time = [03, 03, 03]
 
@@ -316,7 +315,7 @@ let today10Array = [today10.getFullYear(), (today10.getMonth()+1), today10.getDa
 
 console.log(birthDayArray, today10Array)
 
-function isTodayMyBirthday (checkYear, checkMonth, checkDate){
+function isTodayMyBirthday (checkMonth, checkDate){
  
   let checkMonthValid = (birthDayArray[1] === today10Array[1])
   let checkDateValid = (birthDayArray[2] === today10Array[2]);
