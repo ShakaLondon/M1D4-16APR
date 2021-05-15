@@ -543,19 +543,149 @@ console.log(movieTitles)
 /* Ex.15
    Write a function called "onlyInThisMillennium" which returns only the movies produced in this millennium.
 */
+const millenArray = []
+
+function onlyInThisMillennium (movie15) {
+
+  
+
+  for (v=0; v<movie15.length; v++) {
+
+    const eachMovie = movie15[v]
+    let yearOut = eachMovie.Year
+    
+
+
+    if (yearOut.includes('2') === true){
+      
+      millenArray.push(eachMovie)
+      
+    } 
+  }
+}
+
+let thisMillennium = onlyInThisMillennium(movies)
+console.log(millenArray)
+
 
 /* Ex.16 
     Write a function called "getMovieById" which receives an id as a parameter and returns the movie with the given id.
 */
+
+let givenID = "tt0120737"
+
+
+
+
+function getMovieById (givenID, movie16) {
+  
+
+  for (d=0; d<movie16.length; d++) {
+
+    const eachMovie = movie16[d]
+    let movID = eachMovie.imdbID
+    
+
+
+    if (movID.includes(givenID) === true){
+      
+      console.log(eachMovie)
+      
+    } 
+  }
+}
+
+let selectedMovieID = getMovieById (givenID, movies)
+
 
 
 /* Ex.17
     Write a function called "sumAllTheYears" which returns the sum of all the years in which the movies provided have been produced.
 */
 
+let res = yearArray.reduce(function(prev, curr){
+  return (Number(prev) || 0) + (Number(curr) || 0);
+});
+
+console.log(res); // prints 45
+
+// let totalSum = function sumAllTheYears (movies) {
+//   let sumYear = 0
+
+//   for (f=0; f<movie17.length; f++) {
+
+//     const selectedYear = movie17[f]
+//     let getYear = selectedYear.year
+
+//     console.log(getYear)
+
+//     let numberYear = parseInt(getYear)
+
+//     console.log(numberYear)
+
+//     sumYear = (+numberYear)
+//   }
+
+//   return sumYear
+// }
+
+// console.log(sumYear)
+// let totalSum = sumAllTheYears(movies)
+
+// let yearNumArray = []
+
+// function sumAllTheYears (arrayOfYears) {
+  
+//   arrayOfYears.forEach(parseInt())
+//     let yearNum = element.parseInt()
+
+//     yearNumArray.push(yearNum)
+    
+//   });
+
+//   console.log(yearNumArray)
+
+//   function getSum(total, num) {
+//     return total + Math.round(num);
+//   }
+
+
+//   let sumofYears = yearNumArray.reduce(getSum, 0);
+
+//   console.log(sumofYears)
+// }
+
+// let yearSum = sumAllTheYears(yearArray)
+
+
 /* Ex.18
     Write a function called "searchByTitle" which receives a string as a parameter and returns all the movies which contain that string in the title.
 */
+
+let givenTitle = "The"
+
+
+
+
+function searchByTitle (givenTitle, movie19) {
+  
+
+  for (y=0; y<movie19.length; y++) {
+
+    const eachTitle = movie19[y]
+    let movTitle = eachTitle.Title
+    
+
+
+    if (movTitle.includes(givenTitle) === true){
+      
+      console.log(eachTitle)
+      
+    } 
+  }
+}
+
+let selectedMovieTitle= searchByTitle (givenTitle, movies)
 
 /* Ex.19
     Write a function called "searchAndDivide" which receives a string as a parameter and returns an object;
@@ -563,9 +693,66 @@ console.log(movieTitles)
     and another array "unmatch" with all the remaining ones.
 */
 
+
+let givenTitle2 = "The"
+
+let match = []
+let unmatch = []
+
+
+function searchByTitle2 (givenTitle2, movie19) {
+  
+
+  for (y=0; y<movie19.length; y++) {
+
+    const eachTitle2 = movie19[y]
+    let movTitle2 = eachTitle2.Title
+    
+
+
+    if (movTitle2.includes(givenTitle2) === true){
+      
+      match.push(eachTitle2)
+      
+    } else {
+
+      unmatch.push(eachTitle2)
+
+    }
+  }
+}
+
+let selectedMovieTitle2= searchByTitle2 (givenTitle2, movies)
+console.log('Movies that match', unmatch)
+console.log('Movies that dont match', match)
+
+
 /* Ex.20
    Write a function called "removeIndex" which receives a number as a parameter and returns the movies array without the element in the given position.
 */
+let excludingArray = []
+
+function removeIndex (givenID, movie20) {
+  
+
+  for (d=0; d<movie20.length; d++) {
+
+    const eachMovie = movie20[d]
+    let movID = eachMovie.imdbID
+    
+
+
+    if (movID.includes(givenID) === false){
+      
+      excludingArray.push(eachMovie)
+      
+    } 
+  }
+}
+
+let withoutIndex = removeIndex (givenID, movies)
+
+console.log(excludingArray)
 
 // [EXTRAS] JS Advanced
 
